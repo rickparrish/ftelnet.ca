@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" href="/favicon.ico">
+	<title>fTelnet: The world's best browser-based terminal client</title>
+
+	<link href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.2/united/bootstrap.min.css" rel="stylesheet" class="SelectedTheme">
+	
+	<link href="/css/Bootstrap3.css?v=20180924" rel="stylesheet">
+
+	<!--[if lt IE 9]>
+	  <script src="/js/html5shiv.js"></script>
+	  <script src="/js/respond.min.js"></script>
+	<![endif]-->
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	
+	<link rel="canonical" href="https://www.ftelnet.ca/" />
+</head>
+<body id="index">
+	<div class="container">
+		<br />
+		<div class="navbar navbar-default xnavbar-fixed-top" id="NavBar">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#/">fTelnet</a>
+			</div>
+			<div class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li><a href="#/news" title="News">News</a></li>
+					<li><a href="#/download" title="Download">Download</a></li>
+					<li><a href="http://my.ftelnet.ca" target="_blank" title="Demos">Demos</a></li>
+					<li><a href="#/contact" title="Contact">Contact</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div id="hashigo">
+                    <div class="alert alert-danger">Sorry, the requested page could not be found.  Try a different link from the menu above.</div>
+                    <!-- Loading... -->
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-body text-center">
+                        <a href='https://play.google.com/apps/testing/com.randm.ftelnet?pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1' target='_blank'><img alt='Get it on Google Play' src='/images/640px-Get_it_on_Google_play.svg.png' style='max-width: 125px;' /></a>
+                        <a href='https://itunes.apple.com/us/app/ftelnet/id1323669507?ls=1&mt=8' target='_blank'><img alt='Download on the App Store' src='/images/640px-Download_on_the_App_Store_Badge.svg.png' style='max-width: 125px;' /></a>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Donations for Rick Parrish of R&M Software
+                    </div>
+                    <div class="panel-body">
+                        <p>Like something you see here? Consider donating to keep development alive!</p>
+                        <p>(Please note that donations are not tax-deductible for income tax purposes.)</p>
+                        <p style="float: left;">Thank you!</p>
+                        <div style="float: right;">
+                            <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                                <input name="cmd" type="hidden" value="_s-xclick" /> 
+                                <input name="encrypted" type="hidden" value="-----BEGIN PKCS7-----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-----END PKCS7-----" /> 
+                                <input alt="PayPal - The safer, easier way to pay online!" border="0" name="submit" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" type="image" /> 
+                                <img alt="" border="0" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" />
+                            </form>
+                        </div>            
+                    </div>
+                </div>
+            </div>
+        </div>
+		
+		<hr>
+		<div id="bootstrapCssTest" class="hide"></div>
+		<footer>
+			<p>Copyright &copy <a href="https://www.rickparrish.ca" target="_blank">Rick Parrish</a> / <a href="https://www.randm.ca" target="_blank">R&amp;M Software</a></p>
+		</footer>
+	</div> 
+	
+	<script src="/js/hashigo.js"></script>
+	<script>
+		$(document).ready(function() {
+			// For 404 page
+			window.location.href = '/#/' + window.location.pathname.replace(/^[/]/, '');
+
+			// For index page
+			// var h = new hashigo();
+			// h.start();
+		});
+	</script>
+
+	<script>
+	  if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+		var msViewportStyle = document.createElement("style")
+		msViewportStyle.appendChild(
+		  document.createTextNode(
+			"@-ms-viewport{width:auto!important}"
+		  )
+		)
+		document.getElementsByTagName("head")[0].appendChild(msViewportStyle)
+	  }
+	</script>
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-4602017-3', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+</body>
+</html>
