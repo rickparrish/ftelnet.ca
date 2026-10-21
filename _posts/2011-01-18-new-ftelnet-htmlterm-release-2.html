@@ -1,0 +1,13 @@
+---
+layout: default
+title: New fTelnet &amp; HtmlTerm release!
+---
+
+<p>Just uploaded Beta 4 of fTelnet/HtmlTerm/WBA. Didn't expect to have time to make these changes so soon, or I wouldn't have released Beta3 yesterday!</p>
+<p>Anyway, this release includes several changes:</p>
+<ul>
+	<li>ClientVars.js has a new ConnectAnsi parameter that you can use to specify a custom location for the connect.ans file. Both fTelnet and HtmlTerm will understand this new setting</li>
+	<li>ClientVars.js also has a few new codepages added to support Atari ASCII (ATASCII) systems. Unfortunately this is only partially implemented at this time, so it only half works in fTelnet, and doesn't work in HtmlTerm at all</li>
+	<li>HtmlTerm will no longer throw errors when run from IE8. It still won't work, since IE8 doesn't support Canvas or WebSocket, but at least it'll fall-back to fTelnet for those of you using that setup</li>
+	<li>WBA had it's interface changed around a little. Now you'll use the close button to hide the form (and double click the tray icon to restore it), and to actually quit theres a File -&gt; Exit menu option</li>
+</ul>

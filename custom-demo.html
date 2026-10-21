@@ -1,0 +1,34 @@
+---
+layout: default
+permalink: /demos/custom-demo/
+title: Custom Demo
+---
+<p>Want to see how this will work with your server? Enter the Hostname below, and if your server doesn't speak WebSocket, then tick the Proxy box to route the connection through my free proxy.</p>
+<hr />
+<h3>Server Settings</h3>
+<p>Hostname:<br />
+	<input id="txtHostname" style="width: 200px;" type="text" value="towel.blinkenlights.nl" /><br />
+	Port:<br />
+	<input id="txtPort" style="width: 50px;" type="text" value="23" /> <strong>NB: For security reasons the proxy only supports port 23</strong><br />
+	<input checked="checked" id="chkProxy" type="checkbox" /> Proxy?<br />
+	<input id="cmdSubmit" onclick="DoConnect(); return false;" type="submit" value="Load Demo" /></p>
+<hr />
+<p>You can implement the demo on your site with the following HTML snippet:</p>
+<p class="text-success">&lt;iframe src="<span id="lblUrl">//embed.ftelnet.ca/?Hostname=towel.blinkenlights.nl&amp;Port=23&amp;Proxy=proxy-us-ga.ftelnet.ca&amp;ProxyPort=80&amp;ProxyPortSecure=443&amp;ConnectionType=telnet&amp;Emulation=ansi-bbs&amp;VirtualKeyboard=on</span>" width="100%" height="1000"&gt;&lt;/iframe&gt;</p>
+<p><iframe height="1000" id="ifClient" src="//embed.ftelnet.ca/?Hostname=towel.blinkenlights.nl&amp;Port=23&amp;Proxy=proxy-us-ga.ftelnet.ca&amp;ProxyPort=1123&amp;ProxyPortSecure=11235&amp;ConnectionType=telnet&amp;Emulation=ansi-bbs&amp;VirtualKeyboard=on" width="100%"></iframe><script>
+        function DoConnect() {
+            var Hostname = document.getElementById("txtHostname").value;
+            if (Hostname == '') { alert('Please enter a hostname'); return }
+
+            var Port = document.getElementById("txtPort").value;
+            if (Port == '') { alert('Please enter a port'); return }
+
+            var Proxy = document.getElementById("chkProxy").checked;
+
+            var Url = '//embed.ftelnet.ca/?Hostname=' + Hostname + '&Port=' + Port;
+            if (Proxy) Url += '&Proxy=proxy-us-ga.ftelnet.ca&ProxyPort=80&ProxyPortSecure=443';
+            Url += '&ConnectionType=telnet&Emulation=ansi-bbs';
+            document.getElementById('lblUrl').innerHTML = Url;
+            document.getElementById('ifClient').src = Url;
+        }
+</script></p>

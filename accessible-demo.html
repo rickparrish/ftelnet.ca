@@ -1,0 +1,27 @@
+---
+layout: default
+permalink: /demos/accessible-demo/
+title: Accessible Demo
+---
+<p>This demo sets AriaInput=true to include a textbox with role="application", which is focused when a connection is made, to automatically switch a screen reader from browse to application mode.</p>
+
+<div class="fTelnetContainer" id="fTelnetContainer">&nbsp;</div>
+<script id="fTelnetScript" src="//www.ftelnet.ca/ftelnet-aria/ftelnet.norip.noxfer.js"></script><script>
+    var Options = new fTelnetOptions();
+    Options.AriaInput = false;
+    Options.BareLFtoCRLF = false;
+    Options.BitsPerSecond = 57600;
+    Options.ConnectionType = 'telnet';
+    Options.Emulation = 'ansi-bbs';
+    Options.Enter = '\r';
+    Options.Font = 'CP437';
+    Options.ForceWss = false;
+    Options.Hostname = 'bbs.ftelnet.ca';
+    Options.LocalEcho = false;
+    Options.NegotiateLocalEcho = true;
+    Options.Port = window.location.protocol === 'https:' ? 11235 : 1123;
+    Options.ScreenColumns = 80;
+    Options.ScreenRows = 25;
+    Options.SendLocation = true;
+    var fTelnet = new fTelnetClient('fTelnetContainer', Options);
+</script>

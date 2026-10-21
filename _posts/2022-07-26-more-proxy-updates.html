@@ -1,0 +1,14 @@
+---
+layout: default
+title: More proxy updates
+---
+
+<p>Sorry if you've experienced problems with any of the proxies over the last few days.&nbsp; I made some changes to allow connecting to IPv6-only systems, but on US-CA and US-NJ things weren't working correctly.&nbsp; After seeing they were still running on Ubuntu 14.04 I thought I'd upgrade them to something more recent, which ended up fixing the IPv6 problem but then it introduced another problem because these are very low resource servers and Ubuntu 20.04 doesn't seem too happy with 64MB RAM.</p>
+
+<p>So for the east coast I've found a new provider with a reasonably-priced 512MB server based in Virginia, and requests for the US-NJ proxy are now being redirected there.&nbsp; Based on the usage I'm seeing on the various proxies, I will likely redirect US-GA there as well, and then have US-VA as the sole east cost proxy going forward.</p>
+
+<p>Unfortunately that provider doesn't have a west coast option, so the temporary fix for US-CA is to redirect requests to US-WA, which has slightly more RAM (96MB) and doesn't seem to be crashing.&nbsp; I'll look for another provider with something in the 256MB-512MB range as a more permanent solution.</p>
+
+<p>The new provider does have an Australian location though, so I've switched to them for the AU proxy.&nbsp; In theory the old provider worked fine, but because it didn't have a dedicated IPv4 address it means having to use different ports compared to all the other proxies, so this slightly simplifies things for me.</p>
+
+<p>And lastly, they have a UK location, so at some point I'll probably start a server there and shut down the NL location.</p>

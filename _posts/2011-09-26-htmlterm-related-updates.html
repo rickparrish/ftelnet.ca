@@ -1,0 +1,15 @@
+---
+layout: default
+title: HtmlTerm related updates
+---
+
+<p>Looks like there has been some progress on the HTML5 WebSocket front, and this has caused some problems with HtmlTerm. Basically some of the major browsers have upgraded to a newer version of the WebSocket protocol, and this means that the WebSocket servers (like WBA and Synchronet's websocketservice.js) need to be upgraded too.I now have the websocketservice.js upgrade complete and am testing it out...if all goes well then I'll upload it to the CVS for everyone else to download, and then I'll use the new logic to upgrade WBA next so I can make a new release of it as well.</p>
+<p>Additionally, as of Firefox 6 the WebSocket API has been "temporarily namespaced in prevision of upcoming changes to the specification", which means I'll also need to update HtmlTerm to support it and future versions. I'll make this release at the same time as the new WBA release, so it'll all be made available at once.</p>
+<p>The good news is that with these changes, all the major browsers should be supported in one form or another:</p>
+<ul>
+	<li>Chrome as of version 4</li>
+	<li>Firefox as of version 4</li>
+	<li>Internet Explorer as of version 10 developer preview</li>
+	<li>Safari as of version 5</li>
+	<li>Opera as of version 10.70</li>
+</ul>

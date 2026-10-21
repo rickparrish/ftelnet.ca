@@ -1,0 +1,9 @@
+---
+layout: default
+title: New fTelnet release!
+---
+
+<p>A couple feature requests came in, so a new build of fTelnet is available. This release implements a custom ANSI escape sequence that will allow the BBS change the font codepage/size dynamically. Simply have it send ESC [ CP ; WIDTH ; HEIGHT Q, so for example to set CodePage 866 at 9x16, it would look like ESC[866;9;16Q (where ESC is byte 27 (or 1B in hex)).</p>
+<p>The code to handle incoming TAB characters was also fixed so it is position only, and not destructive. The code to handle outgoing TAB keypresses was also fixed so they're actually sent, rather than having the focus move to the minimize button.</p>
+<p>A new Screen Capture option is available on the right-click context menu, allowing you to save the screen as a PNG.</p>
+<p>And lastly, incoming data is processed 1024 bytes at a time, so long/large ANSI screens will display and scroll correctly, rather than pause and just display the last screen of text (I'll probably make the 1024 block size configurable in the future).</p>

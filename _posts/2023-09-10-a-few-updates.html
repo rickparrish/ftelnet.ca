@@ -1,0 +1,14 @@
+---
+layout: default
+title: A few updates
+---
+
+<p>There's been a couple noteworthy changes in the last year, which I've neglected to mention!</p>
+
+<p>The most recent is really recent (as in a few days ago), and is a fix for YModem-G transfers.&nbsp; The public proxies had a couple bugs that needed fixing, and now that they're sorted, transfers are working again.</p>
+
+<p>While testing the changes, I noticed the transfers were pretty slow at around 20KB/s or so, so I also made some additional tweaks to fTelnet, fTelnetProxy, and Synchronet's websocketservice.js to speed things up.&nbsp; If I remember correctly the fastest transfer I saw after all the changes was around 3MB/s, which is still pretty slow in the grand scheme of things, but a 150x speedup isn't too bad at all.</p>
+
+<p>Another older change is related to how the user's IP address is reported, if the BBS requests it.&nbsp; Previously both SEND-LOCATION and TTYLOC were supported, but since TTYLOC doesn't allow sending an IPv6 address, support for that was disabled.&nbsp; This means your BBS will now need to use SEND-LOCATION to request the user's IP address, if it isn't already.</p>
+
+<p>And the oldest changes from November of last year are actually pretty cool, so I should have mentioned them sooner!&nbsp; fTelnet now has mouse support, if the BBS requests it, so for example in Synchronet you can click on menu options instead of hitting hotkeys!&nbsp; A new screen size dropdown was added to the menu as well, allowing users to select a larger screen.&nbsp; Both of these changes were made to improve the Synchronet Minesweeper experience, but hopefully will be useful elsewhere as well.</p>

@@ -1,0 +1,16 @@
+---
+layout: default
+title: Even more proxy updates
+---
+
+<p>Unfortunately that new provider I moved 3 of the 4 proxies to in July is shutting down the service I'm using, perhaps as early as tomorrow.&nbsp; (Their host is using IPv4 exhaustion as an excuse to majorly jack up the cost of IPs, so it's nowhere near profitable for them to keep offering the service I'm using, so I don't blame them).</p>
+
+<p>I found a good deal with another provider for the US East and West coasts, so am in the process of setting those up.&nbsp; As of right now us-east has been setup, and I see connections coming in, so it looks like things are working well.</p>
+
+<p style="text-decoration: line-through;">The AU and EU locations are a bit less common, so I don't have a replacement for them yet.&nbsp; If my service is shut down before I do find a replacement, then unfortunately I'll need to redirect those requests to the US locations, which will significantly increase lag.&nbsp; The provider that is shutting down the service I'm using may be bringing a new NAT-based service online in those locations, in which case I'll sign back up for that.</p>
+
+<p style="text-decoration: line-through;">The main issue with a NAT-based service is that I'm given a small block of IPs that I can use, so the proxy can't run on the usual port 80 and 443 anymore, which in the past meant you would need to update your fTelnet configuration to specify the new ports.&nbsp; But yesterday I updated fTelnet, along with the v2 embed wizard, to automatically update proxy configuration when the values you're using need correcting.&nbsp; If you're already using the v2 embed wizard then you're good to go, but if you're self-hosting fTelnet then you'll need to manually update to the latest version, and if you're using the old embed wizard then you'll need to switch to the v2 embed wizard.</p>
+
+<p>Sorry for any trouble this causes.&nbsp; I didn't want/expect to be messing around with the proxies so soon again either!</p>
+
+<p>EDIT: All four locations are back online, and are using the same ports as before, so no changes are needed on your end. That said, <strong>it is STRONGLY recommended that you update to the latest version of fTelnet (either by using the <a href="https://embed-v2.ftelnet.ca/">Embed Wizard v2</a>, or if you self-host, by downloading the latest javascript from <a href="https://github.com/rickparrish/fTelnet/archive/refs/heads/master.zip">GitHub</a>).</strong> That way, if I need to switch to a NAT-based service in the future, fTelnet will automatically detect a change in ports and you won't need to manually reconfigure anything.</p>

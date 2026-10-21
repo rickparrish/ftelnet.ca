@@ -1,0 +1,7 @@
+---
+layout: default
+title: Important fTelnet bugfix release
+---
+
+<p>Some users have been reporting that ANSI screens haven't been displaying correctly in the latest releases of fTelnet, and it looks like it's because I broke something when adding VT100 support! BBSs expect that the cursor will wrap to the beginning of the next line when something is written to the 80th column of the screen, but that wasn't happening in the newer versions, so some screens displayed poorly as a result.</p>
+<p>So that's now fixed, and so screens should be displaying correctly again. If you notice any other issues, please let me know!</p>

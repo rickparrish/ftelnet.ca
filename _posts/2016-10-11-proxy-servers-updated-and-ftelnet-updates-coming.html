@@ -1,0 +1,10 @@
+---
+layout: default
+title: Proxy servers updated, and fTelnet updates coming
+---
+
+<p>The proxy servers haven't been overly reliable lately...UptimeRobot is still able to ping the servers, so I don't get notifications that they're offline, but they're not accepting WebSocket connections so they really aren't doing their job.</p>
+<p>I've just made a change to fTelnetProxy (which powers the proxies) that I'm hoping will address this problem.&nbsp; If it doesn't fix it, I'll keep digging because I hate that they keep going offline for everyone!</p>
+<p>Also, I've been working on fTelnet a bit lately.&nbsp; It's bothered me for a long time that RIP support significantly adds to the size of the fTelnet .js file, to the point that I considered removing it.&nbsp; I really would like to finish RIP support, or at least improve it to the point of being usable, so removing it didn't seem like a great option.&nbsp; So instead I've reorganized the fTelnet project into multiple smaller projects.&nbsp; This has allowed me to create 4 different versions of fTelnet that vary in features, and thus in size.&nbsp; The smallest, which doesn't support RIP or YModem is down to just 140kB (current release is 263kB, so that's nearly half the size!)</p>
+<p>I've also switched to non-static classes, which means you'll now be able to embed two (or more) client windows on the same webpage.&nbsp; This is a feature that some people have asked for, and I know at least one organization hacked in support on their own, but now it'll be built right in.&nbsp; This means a completely different way of using fTelnet though, so to ensure things don't break for existing embedded users I'll be creating a new "v2" embed method.</p>
+<p>Which leads me to my final item: If you'd like to be notified of fTelnet updates, please use the contact form to send me a "subscribe" message.&nbsp; I'll try to get a proper mailing list in place at some point, but for now I'll just keep a contact list in my email client (and will be sure to use BCC for any announcements I send, for your privacy!)</p>

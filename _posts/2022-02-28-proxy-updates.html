@@ -1,0 +1,10 @@
+---
+layout: default
+title: Proxy updates
+---
+
+<p>fTelnetProxy was updated recently, so a restart is no longer needed when an SSL cert is renewed, which should help minimize downtime on the public proxies (sometimes I had to restart even though there were active connections).&nbsp; It also supports switching to a non-root user after the port is bound, so you can run as a non-priviledged user on Linux.</p>
+
+<p>Since I switched to Visual Studio 2022, I also had to update from .NET 4.5 to 4.6.2, which I believe means it will no longer work on XP.&nbsp; But you probably shouldn't have been running a server on XP anymore anyway!</p>
+
+<p>And for anybody using the Dallas, TX location, it is being shut down by the hosting provider due to it being an unprofitable location for them to operate in.&nbsp; You shouldn't need to update your configurations though, I've already redirected the hostname to the Atlanta, GA location, which seemed to have the lowest ping time from Dallas.&nbsp; This is bad news for anybody in the Dallas area, but good news if you're in the Seattle, WA area, as that's where they'll be migrating my VPS to, so there'll now be a proxy available in the pacific northwest.</p>

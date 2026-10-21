@@ -1,0 +1,9 @@
+---
+layout: default
+title: New default proxy server ports
+---
+
+<p>I recently received an email asking how to use fTelnet from behind a corporate firewall.&nbsp; Since ports 1123 and 11235 are non-standard ports that I just picked because of their slight resemblance to telnet's port 23 (and also because they're the start of the <a href="https://en.wikipedia.org/wiki/Fibonacci_number" target="_blank">Fibonacci sequence</a>), they're going to be considered unknown ports and get blocked by some corporate firewalls.</p>
+<p>To get around this, I've moved many of my public proxies from ports 1123 and 11235 to ports 80 and 443.&nbsp; These are standard HTTP and HTTPS ports, so have a much greater chance of passing through a corporate firewall.&nbsp; (If they're really nosy they could use DPI to see that the connections over port 80 are not really HTML and block on those grounds, but since 443 is encrypted I don't think there's anything they can do to block that without also blocking legitimate HTTPS traffic...not a firewall/network expert though, so I could be wrong).</p>
+<p><strong>I'll leave ports 1123 and 11235 active indefinitely, but if you're using one of my proxies, and you want the greatest level of connectivity to your BBS, you should really consider updating the port numbers to 80 and 443 instead.</strong></p>
+<p>The reason I moved "many" instead of "all" is because some of my proxies don't have a dedicated IPv4 address, so I don't have control over what ports I can use.&nbsp; Currently this is proxy-au and proxy-us-tx, so they have to stay at whatever ports they are currently using.&nbsp; I'd like to replace them at some point to standardize everything, but I haven't found any great deals in those regions yet so we're stuck with them for awhile.</p>

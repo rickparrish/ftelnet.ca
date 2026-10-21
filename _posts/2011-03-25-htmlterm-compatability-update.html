@@ -1,0 +1,7 @@
+---
+layout: default
+title: HtmlTerm compatability update
+---
+
+<p>With the recent release of Firefox 4, I've had a few people email me letting me know that HtmlTerm isn't working. The issue here is that early beta versions of Firefox 4 did support WebSockets (which is why the message in HtmlTerm mentions Firefox 4 beta suports HtmlTerm), but then support was removed after it was shown to be vulnerable to attacks.</p>
+<p>Unfortunately there's nothing that I as the programmer of HtmlTerm, or you as the administrator of your website, can do to fix this -- it's up to each user to individually enable WebSockets support in their browser if they want. I'm working on updating the error message in HtmlTerm to give instructions on how to enable WebSocket support in both Firefox and Opera (since it suffers from the same "disabled by default" problem). Hopefully I'll have a chance to upload this new version this weekend.</p>

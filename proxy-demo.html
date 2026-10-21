@@ -1,0 +1,27 @@
+---
+layout: default
+permalink: /demos/proxy-demo/
+title: Proxy Demo
+---
+<p>Not all servers are WebSocket enabled, such as the <a href="http://www.blinkenlights.nl/services.html#starwars" target="_blank">StarWars Asciimation</a> server at towel.blinkenlights.nl, so in that case you'll need to go through a proxy server.&nbsp; I happen to run a free one that you can use!</p>
+<div id="fTelnetContainer" class="fTelnetContainer"></div>
+<script>document.write('<script src="//embed-v2.ftelnet.ca/js/ftelnet-loader.norip.xfer.js?v=' + (new Date()).getTime() + '"><\/script>');</script>
+<script>
+    var Options = new fTelnetOptions();
+    Options.BareLFtoCRLF = false;
+    Options.BitsPerSecond = 57600;
+    Options.ConnectionType = 'telnet';
+    Options.Emulation = 'ansi-bbs';
+    Options.Enter = '\r';
+    Options.Font = 'CP437';
+    Options.ForceWss = false;
+    Options.Hostname = 'towel.blinkenlights.nl';
+    Options.LocalEcho = false;
+    Options.Port = 23;
+    Options.ProxyHostname = 'proxy-nl.ftelnet.ca';
+    Options.ProxyPort = 80;
+    Options.ProxyPort = 443;
+    Options.ScreenColumns = 80;
+    Options.ScreenRows = 25;
+    var fTelnet = new fTelnetClient('fTelnetContainer', Options);
+</script>

@@ -1,0 +1,252 @@
+---
+layout: default
+permalink: /changes/
+title: Changes
+---
+<h4>Friday, September 26, 2013</h4>
+<ul>
+	<li>Implemented "terminal type" subnegotiation, which fixes the login problem with lab.sharontools.com</li>
+</ul>
+<h4>Tuesday, July 10, 2012</h4>
+<ul>
+	<li>Implemented "negotiate about window size" subnegotiation, which fixes the login problem with telehack.com</li>
+</ul>
+<h4>Sunday, July 01, 2012</h4>
+<ul>
+	<li><b>TouchPad</b>: Selects the biggest font that will fit the screen (now that the address book is hidden, and both keyboards can be hidden, this allows for a much larger font that uses most of the screen)</li>
+	<li><b>TouchPad</b>: Address book is no longer based on screen orientation, and is now always hidden when connecting to a server. It can be recalled via the application menu</li>
+	<li><b>TouchPad</b>: Added ability to hide custom virtual keyboard (useful for those with bluetooth keyboards)</li>
+</ul>
+<h4>Friday, June 22, 2012</h4>
+<ul>
+	<li>TouchPad: Started working on changes to allow for full-screen usage (for those with external bluetooth keyboards)</li>
+	<li>Fixed a bug that caused an error message to be displayed when using AutoConnect=1.</li>
+</ul>
+<h4>Saturday, June 02, 2012</h4>
+<ul>
+	<li>Fixed a bug with the TouchPad version, where the Enter key was incorrectly sending a line feed instead of a carriage return in Terminal Mode: BBS mode.</li>
+</ul>
+<h4>Friday, April 13, 2012</h4>
+<ul>
+	<li>Finally got around to adding scrollback support. Hit CTRL+UP ARROW to enable, and then use the arrows keys to navigate</li>
+</ul>
+<h4>Thursday, April 12, 2012</h4>
+<ul>
+	<li>HP TouchPad: Added new Terminal Mode setting that allows a user to indicate whether they'd like fTelnet to act like a BBS telnet client (force 80x25 window, enter sends CR only, local echo disabled), or "Other", which attempts to use as many rows as will fit on the screen, enter sends CR+LF, and local echo is enabled. This should make fTelnet much more useful for MUDs (and possibly other purposes). The custom virtual keyboard will also hide itself in "Other" mode when the TouchPad keyboard is visible (giving you a few extra rows if you put your keyboard into XS mode)</li>
+</ul>
+<h4>Tuesday, April 10, 2012</h4>
+<ul>
+	<li>Changed local echo to be enabled by default, since that follows the telnet spec. A new option has been added to ClientVars.js, and the default there is to disable local echo, since that's waht most BBS SysOps will want.</li>
+	<li>Default for enter is now CR+LF instead of just CR, which should allow fTelnet to work with MUDs that expect CR+LF. The default in ClientVars.js for webpage usage will continue to be CR only, since that's what most BBS SysOps will want.</li>
+	<li>Allow the server to control the client's localecho setting, which should allow MUDs to enable localecho</li>
+	<li>Fixed a bug in HtmlTerm that was causing it to respond to ESC[6n requests over and over and over again</li>
+</ul>
+<h4>Sunday, March 25, 2012</h4>
+<ul>
+	<li>Removed the redundant StrokeFont.zip from the release archive</li>
+	<li>Updated the border demo in the release archive, so now IE7 and IE8 display the top border correctly</li>
+</ul>
+<h4>Tuesday, March 20, 2012</h4>
+<ul>
+	<li>HtmlTerm now handles the ESCAPE and DELETE keys</li>
+</ul>
+<h4>Friday, March 16, 2012</h4>
+<ul>
+	<li>Updated HtmlTerm so CTRL+KEY keypresses are not treated as regular KEY keypresses (eg. CTRL+A is not treated as if you just pressed A on its own)</li>
+	<li>Updated HtmlTerm so regular keypresses are recognized in Opera (why no love for charCode Opera?)</li>
+	<li>Updated WBA to be more consistent with the way users expect a program to work (minimize button minimizes to tray instead of close minimizing to tray)</li>
+</ul>
+<h4>Monday, February 27, 2012</h4>
+<ul>
+	<li>Rewrote a lot of code to make it easier to support multiple platforms, so I possibly broke something in the process. Let me know if that's the case!</li>
+	<li>Added a VirtualKeyboardSize setting, which will control the aforementioned virtual keyboard.</li>
+	<li>Removed the ArrowKeys configuration setting. There's now a complete virtual keyboard, so this ugly little overlay isn't necessary anymore.</li>
+</ul>
+<h4>Monday, February 13, 2012</h4>
+<ul>
+	<li>Cleared the keyboard input buffer after a connection is made (so login prompts don't have garbage added if you hit a key before connecting</li>
+	<li>Updated to FLEX SDK 4.5.1, which now requires a minimum Flash version of 10.2 (I know SDK 4.6 is out, but it requires Flash 11 which is not supported on my TouchPad yet!)</li>
+	<li>Change the way the ConnectAnsi parameter works, so if it is left blank then it won't try to request a file from the web server</li>
+	<li>Added a new ArrowKeys configuration setting. Probably not useful for anybody, but I use it in the webOS version so that people can have an on-screen arrow key (since the default virtual keyboard doesn't have them, and the bluetooth keyboard ones don't work)</li>
+</ul>
+<h4>Wednesday, January 11, 2012</h4>
+<ul>
+	<li>Renamed connect.ans and connect.rip since many webservers don't like serving files with those extensions</li>
+	<li>Updated default RIP screen to mention fTelnet/HtmlTerm/R&amp;M Software, rather than Shotgun/GUNN Data Systems</li>
+	<li>Reverted the oct 23 change that re-displays the connect.ans file 5 seconds after disconnecting</li>
+	<li>Updated WBA to support Chrome 16, which implemented a newer version of the websocket protocol</li>
+	<li>Updated WBA so it can act as a websocket proxy for multiple destinations. This means you'll need to update your .ini file after updating!</li>
+</ul>
+<h4>Wednesday, November 02, 2011</h4>
+<ul>
+	<li>Hopefully fixed the RIP icon loading problem (don't have LORD setup right now to test, so please let me know)</li>
+	<li>Updated WBA so when I add new configuration options, it will automatically add them to the .ini file the next time it is run (so then you can close WBA, edit the new setting, and re-run WBA)</li>
+</ul>
+<h4>Sunday, October 23, 2011</h4>
+<ul>
+	<li>Fixed a problem with RIPIconPath not being used</li>
+	<li>Added a timer to re-display the connect screen 5 seconds after disconnecting</li>
+	<li>Removed the scaling of the connect and save buttons for non-9x16 fonts. It was just plain ugly!</li>
+	<li>Added support for custom Connect and Save buttons again. I removed this awhile ago since it involved extra HTTP requests that slowed load time, but in adding the feature back in the extra HTTP requests will only be made if the configuration option is set, which means people using the default buttons won't suffer a delay</li>
+	<li>Adding the JSON and ZIP code increased the fTelnet.swf file by a bit, but it's still under 110kB (so far)</li>
+	<li>Zipped the JSON encoded stroke fonts, so RIP users will only have a ~75kB file to download, rather than a ~537kB file</li>
+</ul>
+<h4>Saturday, October 22, 2011</h4>
+<ul>
+	<li>So depending on what type of connection you're hosting your BBS on, these changes may not be noticeable to you, but some will definitely benefit</li>
+	<li>512 kilobit upstream (average consumer broadband connection): Before = 4.86 seconds, After = 1.55 seconds (3.31 seconds faster = definitely noticeable)</li>
+	<li>1 megabit upstream (higher end consumer broadband connection): Before = 2.43 seconds, After = 0.77 seconds (1.66 seconds faster = might be noticeable)</li>
+	<li>10 megabit upstream (higher end server): Before = 0.25 seconds, After = 0.08 seconds (0.17 seconds faster = probably not noticeable)</li>
+	<li>So these 3 simple changes mean fTelnet.swf went from 311kB to 99kB, which is a reduction of ~68%. What does this actually mean? Well here's some examples of load time before and after:</li>
+	<li>Removal of the ebmedded graphic mode stroke fonts. Again, these are still supported, but will be loaded on demand. This shrank the .swf by 84kB (~27%)</li>
+	<li>Removal of all embedded text mode fonts, except the default CP437 at 9x16. All the other fonts are still supported, but will be loaded on demand. This shrank the .swf by 95kB (~31%)</li>
+	<li>Removal of the BorderStyle configuration option. Borders can be added via HTML, if desired, so removing this shrank the .swf by 33kB (~10%)</li>
+	<li>Much clean-up to help reduce the fTelnet.swf filesize, including:</li>
+</ul>
+<h4>Saturday, October 15, 2011</h4>
+<ul>
+	<li>Fixed a bug in WBA.exe that caused it to hang if you used the STOP parameter to close the running instance</li>
+</ul>
+<h4>Sunday, October 02, 2011</h4>
+<ul>
+	<li>Updated fTelnet to send \r\n instead of just \r when sending the target hostname to the proxy</li>
+	<li>Fixed the free proxy running at proxy.ftelnet.ca to handle non-alphanumeric characters in the domain name (previously they were stripped</li>
+	<li>Fixed the RIP command recognition function, so it doesn't think !|<esc> is a command anymore (ESC is only a command in level 1 or 9, not level 0)</esc></li>
+</ul>
+<h4>Saturday, October 01, 2011</h4>
+<ul>
+	<li>Added \r\n to the default RIP screen, so the RIP parser knows when the screen has finished displaying (so if the BBS sends a pipe character as the first character after you connect (like NetFoss seems to), the parser doesn't think it's a RIP command)</li>
+</ul>
+<h4>Monday, August 22, 2011</h4>
+<ul>
+	<li>Fixed a bug where the cursor wasn't wrapping properly when writing to the 80th column (recently introduced with the VT100 changes)</li>
+</ul>
+<h4>Friday, August 12, 2011</h4>
+<ul>
+	<li>Added a javascript method to enable / disable local echo (ClientSetLocalEcho())</li>
+	<li>Fixed a problem with the telnet option negotiation that caused file transfers to fail for some people</li>
+</ul>
+<h4>Thursday, July 28, 2011</h4>
+<ul>
+	<li>Removed the Auto Update feature from WBA (fixing the annoying error at startup). This feature wasn't ever used anyway, since WBA is not a stand-alone application, but is bundled with fTelnet.</li>
+</ul>
+<h4>Wednesday, July 27, 2011</h4>
+<ul>
+	<li>Fixed the disconnect button -- I forgot I overrode the button to open and display a local ANSI/RIP/VTxxx screen (which is how I was testing the various parsers). The button will now open a local file when in the disconnected state, and will act as the disconnect button when in the connected state.</li>
+</ul>
+<h4>Tuesday, July 26, 2011</h4>
+<ul>
+	<li>Added STOP command-line parameter for WBA.exe, which will cause the running WBA.exe process to terminate (useful for scheduled maintenance)</li>
+	<li>Added control key parsing to RIP buttons (so if a button's command was "^M/L", then now ^M will be properly converted to a carriage return)</li>
+	<li>Fixed ClientFuns.js to not throw errors in fTelnet only mode (was complaining about HtmlTerm not being defined)</li>
+	<li>Added ClientClrScr() to ClientFuncs.js -- This allows you to add a link/button to the page which will clear the client display</li>
+	<li>Removed ClientVars.Blink variable -- Blink is now always available</li>
+	<li>Fixed echo telnet negotiation (was mistakenly trying to enable local echo)</li>
+	<li>Added ability for characters to have underlines</li>
+	<li>Added preliminary support for VTxxx terminal emulation (see ClientVars.VT to enable)</li>
+	<li>Fixed SetScreenSize(), which caused scaling when the cursor position was outside the new screen size</li>
+	<li>Fixed the "clear from beginning of screen" and "clear to end of screen" codes, which were clearing the whole line not just the start/end of the current line</li>
+	<li>Fixed the "clear to end of line" code, which wasn't removing the character in the rightmost column</li>
+</ul>
+<h4>Sunday, July 10, 2011</h4>
+<ul>
+	<li>Added support for a few more CTRL keypress combinations (so for example CTRL-[ will now work in Synchronet's telnet door)</li>
+	<li>Fixed the ESC key -- I unintentionally broke it when adding support for international keyboards, and only noticed it the other day when trying to quit scfg!</li>
+	<li>As mentioned above, RIPscript support has been added. It's still a work in progress, but the majority of the features from the 1.54 spec have been implemented. Not everything has been tested though (as I don't have screens using all the features to test with), so let me know if you notice any discrepencies in how your screens are displayed</li>
+	<li>Added RLogin* configuration options, which allow you to enable connecting via rlogin instead of telnet</li>
+	<li>Added RIPIconPath configuration option, which tells fTelnet where to find the RIP *.ICN files in RIP mode</li>
+	<li>Added RIP configuration option, which allows you to enable RIPscript mode</li>
+	<li>Added ProxyRLogin* configuration options, which allow you to define a proxy server to route rlogin connections though</li>
+	<li>Added ConnectRIP configuration option, which should give the absolute path to the .RIP screen to display behind the connect button at startup.</li>
+	<li>Added ConnectButton* configuration options, which will allow you to specify the position of the connect button (so now you can move it out of the way and not have it block the middle of your intro ansi!)</li>
+	<li>Added AlertDialog* configuration options, which will allow you to specify the position of the alert dialog boxes (such as the disconnect dialog)</li>
+	<li>Wasn't keeping great track of changes over the last few months, so I'm lumping all the ones I can remember into this date. I'm sure I'll forget some changes too though.</li>
+</ul>
+<h4>Saturday, March 12, 2011</h4>
+<ul>
+	<li>Relocated connect.ans from the img subdirectory to the root directory, so if you have a custom intro ansi, you may have to move it (probably not though, unless you change the ConnectAnsi configuration variable to match)</li>
+	<li>Removed support for custom connect/save files buttons. Not sure anybody used them, and it'll speed up the load time. Can always re-enable this if it was actually a useful feature</li>
+</ul>
+<h4>Thursday, March 10, 2011</h4>
+<ul>
+	<li>Added support for international keyboards</li>
+</ul>
+<h4>Thursday, February 24, 2011</h4>
+<ul>
+	<li>Added support for proxying the connection. Helpful for the cases when it's not possible to run a flash socket policy server on the same machine as the telnet server.</li>
+</ul>
+<h4>Tuesday, January 18, 2011</h4>
+<ul>
+	<li>Suppressed page errors when loading HtmlTerm in IE8</li>
+	<li>Added support for the Atari ASCII (ATASCII) character set</li>
+	<li>Added ConnectAnsi parameter, which allows you to specify the location of your intro screen</li>
+</ul>
+<h4>Monday, January 17, 2011</h4>
+<ul>
+	<li>Disabled transparency, which caused the client to be hidden in Firefox</li>
+</ul>
+<h4>Monday, December 13, 2010</h4>
+<ul>
+	<li>Started bundling Web BBS Assistant (WBA for short), a Win32 flash socket policy server and WebSocket to Telnet redirector</li>
+	<li>Updated examples to allow fail-over from fTelnet to HtmlTerm (or vice versa) when one of the clients is not supported</li>
+</ul>
+<h4>Monday, September 27, 2010</h4>
+<ul>
+	<li>Released the source under the GPLv3 license.</li>
+	<li>Added Amiga fonts upon request</li>
+	<li>Removed the minimize and maximize buttons. Might add an option to add them back in if anyone actually liked them</li>
+</ul>
+<h4>Sunday, September 05, 2010</h4>
+<ul>
+	<li>Implemented handling of ESC[5n, which is used by ProBoard to detect ANSI emulation.</li>
+</ul>
+<h4>Wednesday, August 25, 2010</h4>
+<ul>
+	<li>New variable: BitsPerSecond. Let's you get all nostalgic and slow your display down to what it would have been like with a 300bps modem! (Or any other bitrate you'd like to use)</li>
+	<li>The TAB key no longer switches focus away from the flash client in IE</li>
+	<li>Fixed YModem-G uploads where the receiver does not properly ACK header packets (Async Pro does this for example)</li>
+	<li>Fixed a stupid bug where a reply to ESC[255n was incorrectly being sent when ESC[6n was received</li>
+</ul>
+<h4>Tuesday, August 24, 2010</h4>
+<ul>
+	<li>Added a confirmation dialog to the close/disconnect click (thanks to a class found at http://fatal-exception.co.uk/blog/?p=69)</li>
+	<li>Pressing tab now correctly sends that key to the remote server (instead of switching focus to the min/max/close buttons)</li>
+	<li>New Capture Screen entry added to right-click context-menu allows users to easily take screenshots of their current session</li>
+	<li>Incoming data is processed in blocks of 1024 bytes at a time, which helps ensure the screen is updated often enough to prevent pauses while displaying large ANSI's</li>
+	<li>Fixed TAB to not be destructive</li>
+	<li>Implemented a few more of the less common ANSI escape sequences (L, M, 255n)</li>
+	<li>Implemented a custom ANSI escape sequence to allow the BBS to change codepage/font size. Useful for foreign BBS's that want a custom codepage for their BBS menus, but then want 437 for BBS door games to ensure they display correctly.</li>
+</ul>
+<h4>Monday, August 23, 2010</h4>
+<ul>
+	<li>One last font optimization to get the file size down even further. I think that's all I can do now though!</li>
+</ul>
+<h4>Sunday, August 22, 2010</h4>
+<ul>
+	<li>Batch downloads are now saved as a TAR archive, removing the need to save each file individually</li>
+	<li>A "Save File(s)" button pops up after a download completes, helping to make the process simpler</li>
+	<li>Added a bunch of new codepages at the 9x16 font size</li>
+	<li>Added the CTRL-PAGEDOWN and CTRL-PAGEUP key combinations to initiate a download or upload</li>
+	<li>Border styles with control buttons now initiate a download with a minimize button click, or an upload with a maximize button click</li>
+</ul>
+<h4>Saturday, August 21, 2010</h4>
+<ul>
+	<li>Re-organized event handling to hopefully prevent the rare data loss cases</li>
+	<li>Further optimized font handling to reclaim speed lost to August 20th size optimization</li>
+	<li>Built in release mode, further shrinking the SWF size and increasing it's speed</li>
+</ul>
+<h4>Friday, August 20, 2010</h4>
+<ul>
+	<li>Optimized font size to allow for embedding without bloating the SWF by 2+ megs</li>
+</ul>
+<h4>Thursday, August 19, 2010</h4>
+<ul>
+	<li>Fixed CodePage 737 and 862 again (saved as wrong file type before)</li>
+	<li>Created a CodePage 866 font (9x16 only)</li>
+	<li>Fixed a character handling bug in the connect.ans display routine</li>
+	<li>Removed the statusbar (will implement popup alerts for things that need it)</li>
+</ul>
+<h4>Wednesday, August 18, 2010</h4>
+<ul>
+	<li>Fixed character 31 in CodePage 737 and 862</li>
+</ul>

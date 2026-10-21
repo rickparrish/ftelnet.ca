@@ -1,0 +1,26 @@
+---
+layout: default
+permalink: /demos/rip-demo/
+title: RIP Demo
+---
+<p>This demo shows off the experimental RIP support.&nbsp; Still a long way to go, but cool to try out.</p>
+
+<p><strong>(RIP support is currently broken, so this demo is not very useful.)</strong></p>
+
+<div class="fTelnetContainer" id="fTelnetContainer">&nbsp;</div>
+<script>document.write('<script src="//embed-v2.ftelnet.ca/js/ftelnet-loader.rip.xfer.js?v=' + (new Date()).getTime() + '"><\/script>');</script><script>
+    var Options = new fTelnetOptions();
+    Options.BareLFtoCRLF = false;
+    Options.BitsPerSecond = 57600;
+    Options.ConnectionType = 'telnet';
+    Options.Emulation = 'RIP';
+    Options.Enter = '\r';
+    Options.Font = 'CP437';
+    Options.ForceWss = false;
+    Options.Hostname = 'bbs.ftelnet.ca';
+    Options.LocalEcho = false;
+    Options.Port = window.location.protocol === 'https:' ? 11235 : 1123;
+    Options.ScreenColumns = 80;
+    Options.ScreenRows = 25;
+    var fTelnet = new fTelnetClient('fTelnetContainer', Options);
+</script>

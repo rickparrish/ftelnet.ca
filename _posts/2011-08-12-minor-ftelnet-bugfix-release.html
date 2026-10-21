@@ -1,0 +1,7 @@
+---
+layout: default
+title: Minor fTelnet bugfix release
+---
+
+<p>fTelnet was hanging when attempting to upload a file under certain circumstances, so I've updated the telnet option negotiation code (which seemed to be the culprit).</p>
+<p>A new javascript function ClientSetLocalEcho() has been added, allowing you to enable or disable local echo at the push of a button. Probably could have added a configuration option for this as well, but I guess that'll have to wait for the next release now!</p>
